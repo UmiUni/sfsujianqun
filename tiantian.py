@@ -12,7 +12,7 @@ usersDict = {}
 itchat.auto_login(enableCmdQR=2,hotReload=True)
 itchat.get_chatrooms(update=True)
 
-v0= u"您好，😊Stanford加群建群小助手😊为您服务～\n"
+v0= u"您好，SFSU加群建群小助手😊为您服务～\n"
 v1= u"回复 1 加CS刷题、竞赛、面试;\n"
 v2= u"回复 2 加亚马逊免费物品群;SFSU桌游群\n"
 v3= u"回复 3 加SFSU三番租房群;\n"
@@ -97,6 +97,8 @@ def tuling_reply(msg):
         sleep(0.5)
     elif "2" in msgText:
         pullMembersMore(msg, u'天天Hao', CurUserName)
+        sleep(0.5)
+        pullMembersMore(msg, u'SFSU桌游群', CurUserName)
         sleep(0.5)
     elif "3" in msgText:
         pullMembersMore(msg, u'SFSU租房', CurUserName)
