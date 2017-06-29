@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import requests
 import itchat
 from itchat.content import *
@@ -12,7 +13,7 @@ usersDict = {}
 itchat.auto_login(enableCmdQR=2,hotReload=True)
 itchat.get_chatrooms(update=True)
 
-v0= u"您好，SFSU加群建群小助手😊为您服务～\n"
+v0= u"您好,SFSU加群建群小助手为您服务:)\n"
 v1= u"回复 1 加CS刷题、竞赛、面试;\n"
 v2= u"回复 2 加亚马逊免费物品群;SFSU桌游群\n"
 v3= u"回复 3 加SFSU三番租房群;\n"
