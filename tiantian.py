@@ -18,7 +18,10 @@ v1= u"回复 1 加CS刷题、竞赛、面试;\n"
 v2= u"回复 2 加亚马逊免费物品群;SFSU桌游群\n"
 v3= u"回复 3 加SFSU三番租房群;\n"
 v4= u"回复 4 加SFSU拼车群;\n"
-vT =v0+v1+v2+v3+v4
+v5= u"回复 5 加SFSU校友群;\n"
+v6= u"回复 6 加SFSU美食约饭群;\n"
+v7= u"回复 7 加SFSU二手货群;\n"
+vT =v1+v2+v3+v4+v5+v6+v7
 #Chaoran userid:@ef633e828340000b5518a18f66daefbf8f307a1fa96d405288a885014d8c25d5
 #汪灵欣 userid:@eb21513f32b62cd9773abc2fd5531ee05ca09af4ca926fbf896d8c89f29e46cc
 #groups= {'@@6cdcfcb7dc00e7d546464ba702151143e1bf4aa9f72aa6e2559b86469e9a2481':'天天VIP','@@0515f86f31ec80ce4d4238a9ada8fdc0dd0900cc017f87c17df8ee49fb6d4663':'雷孙王'}
@@ -99,13 +102,22 @@ def tuling_reply(msg):
     elif "2" in msgText:
         pullMembersMore(msg, u'天天Hao', CurUserName)
         sleep(0.5)
-        pullMembersMore(msg, u'SFSU桌游群', CurUserName)
+        pullMembersMore(msg, u'SFSU 桌游群', CurUserName)
         sleep(0.5)
     elif "3" in msgText:
-        pullMembersMore(msg, u'SFSU租房', CurUserName)
+        pullMembersMore(msg, u'SFSU 租房', CurUserName)
         sleep(0.5)
     elif "4" in msgText:
-        pullMembersMore(msg, u'SFSU拼车群', CurUserName)
+        pullMembersMore(msg, u'SFSU 拼车群', CurUserName)
+        sleep(0.5)
+    elif "5" in msgText:
+        pullMembersMore(msg, u'SFSU 校友群', CurUserName)
+        sleep(0.5)
+    elif "6" in msgText:
+        pullMembersMore(msg, u'SFSU 美食约饭群', CurUserName)
+        sleep(0.5)
+    elif "7" in msgText:
+        pullMembersMore(msg, u'SFSU 二手货群', CurUserName)
         sleep(0.5)
     else:
         itchat.send_msg(vT, CurUserName)
