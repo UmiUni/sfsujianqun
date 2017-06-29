@@ -108,16 +108,16 @@ def tuling_reply(msg):
         pullMembersMore(msg, u'SFSU 租房', CurUserName)
         sleep(0.5)
     elif "4" in msgText:
-        pullMembersMore(msg, u'SFSU 拼车群', CurUserName)
+        pullMembersMore(msg, u'SFSU 拼车', CurUserName)
         sleep(0.5)
     elif "5" in msgText:
-        pullMembersMore(msg, u'SFSU 校友群', CurUserName)
+        pullMembersMore(msg, u'SFSU 校友', CurUserName)
         sleep(0.5)
     elif "6" in msgText:
-        pullMembersMore(msg, u'SFSU 美食约饭群', CurUserName)
+        pullMembersMore(msg, u'SFSU 美食', CurUserName)
         sleep(0.5)
     elif "7" in msgText:
-        pullMembersMore(msg, u'SFSU 二手货群', CurUserName)
+        pullMembersMore(msg, u'SFSU 二手', CurUserName)
         sleep(0.5)
     else:
         itchat.send_msg(vT, CurUserName)
