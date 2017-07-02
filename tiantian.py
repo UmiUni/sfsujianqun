@@ -100,8 +100,6 @@ def tuling_reply(msg):
         pullMembersMore(msg, u'天天刷题', CurUserName)
         sleep(0.5)
     elif "2" in msgText:
-        pullMembersMore(msg, u'天天Hao', CurUserName)
-        sleep(0.5)
         pullMembersMore(msg, u'SFSU 三番桌游群', CurUserName)
         sleep(0.5)
     elif "3" in msgText:
