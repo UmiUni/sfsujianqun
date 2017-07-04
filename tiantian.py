@@ -21,7 +21,8 @@ v4= u"回复 4 加SFSU三番拼车群;\n"
 v5= u"回复 5 加SFSU三番校友群;\n"
 v6= u"回复 6 加SFSU三番美食约饭群;\n"
 v7= u"回复 7 加SFSU三番二手货群;\n"
-vT =v0+v1+v2+v3+v4+v5+v6+v7
+v8= u"回复 8 加北美CPA,REG天天刷题群;\n"
+vT =v0+v1+v2+v3+v4+v5+v6+v7+v8
 #Chaoran userid:@ef633e828340000b5518a18f66daefbf8f307a1fa96d405288a885014d8c25d5
 #汪灵欣 userid:@eb21513f32b62cd9773abc2fd5531ee05ca09af4ca926fbf896d8c89f29e46cc
 #groups= {'@@6cdcfcb7dc00e7d546464ba702151143e1bf4aa9f72aa6e2559b86469e9a2481':'天天VIP','@@0515f86f31ec80ce4d4238a9ada8fdc0dd0900cc017f87c17df8ee49fb6d4663':'雷孙王'}
@@ -116,6 +117,9 @@ def tuling_reply(msg):
         sleep(0.5)
     elif "7" in msgText:
         pullMembersMore(msg, u'SFSU 三番二手', CurUserName)
+        sleep(0.5)
+    elif "8" in msgText:
+        pullMembersMore(msg, u'北美CPA', CurUserName)
         sleep(0.5)
     else:
         itchat.send_msg(vT, CurUserName)
