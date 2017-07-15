@@ -150,12 +150,28 @@ def text_reply(msg):
     print(msg['ActualNickName'])
     print(msg['Content'])
     '''
+    '''
     if "@Stanford加群" in msg['Content']:
         replyS = get_response(msgS)
         if msg.actualNickName.count("@")>=2:
             msg.user.send(u'%s' % (replyS+'~想进群加我😊'))
         else:
             msg.user.send(u'@%s\u2005%s' % (msg.actualNickName, replyS+'~想进群加我😊'))
+    '''
+    if msg['ActualNickName']=="超然":
+      content = msg['Content']
+      if(content[0]=="@"):
+        arr = content.split()
+	if "广告" in arr[1]:
+          delUser = searchUser(msg['User']['MemberList'],arr[0])
+          itchat.delete_member_from_chatroom(msg['FromUserName'],[{'UserName':delUser}])
+          msg.user.send('谢谢群主:超然，已飞~😊')
+
+def searchUser(users,target):
+  for user in users:
+    if(user['NickName']==target[1:]):
+      return user['UserName']
+
     '''  
     ###超级广告###
     if not msg.isAt:
