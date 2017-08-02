@@ -13,17 +13,30 @@ usersDict = {}
 itchat.auto_login(enableCmdQR=2,hotReload=True)
 itchat.get_chatrooms(update=True)
 
+chatGroups =[ 
+u"天天刷题",
+u"SFSU 三番桌游",
+u"SFSU 租房",
+u'SFSU 三番拼车',
+u'SFSU 三番校友',
+u'SFSU 三番美食',
+u'SFSU 三番二手',
+u'北美CPA',
+u'线上KTV',
+u'北美信用卡'
+] 
+
 v0= u"您好,SFSU三番加群建群小助手为您服务:)\n"
-v1= u"回复 1 加CS刷题、竞赛、面试;\n"
-v2= u"回复 2 SFSU三番桌游群\n"
-v3= u"回复 3 加SFSU三番租房群;\n"
-v4= u"回复 4 加SFSU三番拼车群;\n"
-v5= u"回复 5 加SFSU三番校友群;\n"
-v6= u"回复 6 加SFSU三番美食约饭群;\n"
-v7= u"回复 7 加SFSU三番二手货群;\n"
-v8= u"回复 8 加北美CPA,REG天天刷题群;\n"
-v9= u"回复 9 加线上KTV开嗓🎙️北美总群\n"
-v10= u"回复 10 加北美信用卡爱好者总群\n"
+v1= u"回复 0 加CS刷题、竞赛、面试;\n"
+v2= u"回复 1 SFSU三番桌游群\n"
+v3= u"回复 2 加SFSU三番租房群;\n"
+v4= u"回复 3 加SFSU三番拼车群;\n"
+v5= u"回复 4 加SFSU三番校友群;\n"
+v6= u"回复 5 加SFSU三番美食约饭群;\n"
+v7= u"回复 6 加SFSU三番二手货群;\n"
+v8= u"回复 7 加北美CPA,REG天天刷题群;\n"
+v9= u"回复 8 加线上KTV开嗓🎙️北美总群\n"
+v10= u"回复 9 加北美信用卡爱好者总群\n"
 vT =v0+v1+v2+v3+v4+v5+v6+v7+v8+v9+v10
 #Chaoran userid:@ef633e828340000b5518a18f66daefbf8f307a1fa96d405288a885014d8c25d5
 #汪灵欣 userid:@eb21513f32b62cd9773abc2fd5531ee05ca09af4ca926fbf896d8c89f29e46cc
@@ -99,37 +112,10 @@ def tuling_reply(msg):
     else:
         usersDict[CurUserName] = 1
     msgText = msg['Text']
-    if "1" in msgText and ("10" not in msgText):
-        pullMembersMore(msg, u'天天刷题', CurUserName)
+    for x in range (0, 10):
+      if(str(x) in msgText):
+        pullMembersMore(msg, chatGroups[x], CurUserName)
         sleep(0.5)
-    elif "2" in msgText:
-        pullMembersMore(msg, u'SFSU 三番桌游群', CurUserName)
-        sleep(0.5)
-    elif "3" in msgText:
-        pullMembersMore(msg, u'SFSU 租房', CurUserName)
-        sleep(0.5)
-    elif "4" in msgText:
-        pullMembersMore(msg, u'SFSU 三番拼车', CurUserName)
-        sleep(0.5)
-    elif "5" in msgText:
-        pullMembersMore(msg, u'SFSU 三番校友', CurUserName)
-        sleep(0.5)
-    elif "6" in msgText:
-        pullMembersMore(msg, u'SFSU 三番美食', CurUserName)
-        sleep(0.5)
-    elif "7" in msgText:
-        pullMembersMore(msg, u'SFSU 三番二手', CurUserName)
-        sleep(0.5)
-    elif "8" in msgText:
-        pullMembersMore(msg, u'北美CPA', CurUserName)
-        sleep(0.5)
-    elif "9" in msgText:
-        pullMembersMore(msg, u'线上KTV', CurUserName)
-        sleep(0.5)
-    elif "10" in msgText:
-        pullMembersMore(msg, u'北美信用卡', CurUserName)
-        sleep(0.5)
-    sleep(0.5)
     itchat.send_msg(vT, CurUserName)
     sleep(0.5)
 
@@ -143,7 +129,6 @@ def pullMembersMore(msg, chatroomName, CurUserName):
 
 @itchat.msg_register(TEXT, isGroupChat=True)
 def text_reply(msg):
-    msgS = msg.text
     '''
     print(msg['isAt'])
     print(msg['ActualNickName'])
@@ -157,18 +142,23 @@ def text_reply(msg):
         else:
             msg.user.send(u'@%s\u2005%s' % (msg.actualNickName, replyS+'~想进群加我😊 '))
     '''
-    if msg['ActualNickName']=="超然":
+    if u'超然' in msg['ActualNickName']:
       content = msg['Content']
       if(content[0]=="@"):
-        arr = content.rsplit(None,1)
-        if "广告" in arr[1]:
-          delUser = searchUser(msg['User']['MemberList'],arr[0])
-          itchat.delete_member_from_chatroom(msg['FromUserName'],[{'UserName':delUser}])
-          msg.user.send('谢谢，已清除~😊 ')
+        if u'广告' in content:
+          delUser(msg['FromUserName'],content)
+
+
+
+def delUser(roomId, content):
+  ret = itchat.delete_member_from_chatroom(roomId,[{'UserName':searchUser(getChatroomMemberList(roomId),content)}])
+  if(ret):
+    itchat.send('为保持群内清洁,已清除广告号~😊',toUserName=roomId)
 
 def searchUser(users,target):
   for user in users:
-    if(user['NickName']==target[1:] or user['DisplayName']==target):
+    if( (user['NickName']!='' and user['NickName'] in target) or ((user['DisplayName']!='') and (user['DisplayName'] in target))):
+        #or ((user['ActualNickName']!='') and (user['ActualNickName'] in target)))
       return user['UserName']
 
     '''  
@@ -248,13 +238,12 @@ def group_reply_media(msg):
                 itchat.send('%s: %s:' % (groups[source], msg['ActualNickName']), item)
                 itchat.send('@%s@%s' % ({'Picture': 'img', 'Video': 'vid'}.get(msg['Type'], 'fil'), msg['FileName']), item)
                 '''
-'''
-def updateChatroom(chatroomName):
-    cur_chatrooms = itchat.search_chatrooms(name=u'UIUC租房3群')
-    detailedChatroom = itchat.update_chatroom(cur_chatrooms[0]['UserName'], detailedMember=False)
-    #print(json.dumps(detailedChatroom )+"\n")
-'''
 
+def getChatroomMemberList(roomId):
+    itchat.get_chatrooms(update=True)
+    detailedChatroom = itchat.update_chatroom(roomId, detailedMember=True)
+    return detailedChatroom['MemberList']
+    #print(json.dumps(detailedChatroom )+"\n")
 
 
 itchat.run() 
