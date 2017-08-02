@@ -23,7 +23,9 @@ u'SFSU 三番美食',
 u'SFSU 三番二手',
 u'北美CPA',
 u'线上KTV',
-u'北美信用卡'
+u'北美信用卡',
+u'小助手测试群0',
+u'小助手测试群1'
 ] 
 
 v0= u"您好,SFSU三番加群建群小助手为您服务:)\n"
@@ -148,7 +150,10 @@ def text_reply(msg):
         if u'广告' in content:
           delUser(msg['FromUserName'],content)
 
-
+def delFromAllGroup(content):
+  for i in range(len(chatGroups)):
+    delUser(getName(chatGroups[i]),content) 
+    
 
 def delUser(roomId, content):
   ret = itchat.delete_member_from_chatroom(roomId,[{'UserName':searchUser(getChatroomMemberList(roomId),content)}])
