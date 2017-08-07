@@ -52,7 +52,7 @@ def delFromAllGroup(content):
 def delUser(roomId, content):
   if(roomId is None):
     return 
-  ret = itchat.delete_member_from_chatroom(roomId,[{'UserName':searchUser(getChatroomMemberList(roomId),content)}])
+  ret = itchat.delete_member_from_chatroom(roomId,searchUser(getChatroomMemberList(roomId),content))
   if(ret):
     itchat.send('谢谢群主，为保持群内清洁,已清除广告号~😊',toUserName=roomId)
 
@@ -65,11 +65,14 @@ def delUserEnhance(roomId, content, userId):
 
 #search a user base on target msg
 def searchUser(users,target):
+  memberList = []
   for user in users:
     #print user['NickName']+" "+user['DisplayName']+" "+target
     if( (user['NickName']!='' and user['NickName'] in target) or ((user['DisplayName']!='') and (user['DisplayName'] in target))):
-        #or ((user['ActualNickName']!='') and (user['ActualNickName'] in target)))
-      return user['UserName']
+      tmpList = {}
+      tmpList['UserName']=user['UserName']
+      memberList.append(tmpList.copy())
+  return memberList
 
 #get a chatroom member list according to room Id
 def getChatroomMemberList(roomId):
