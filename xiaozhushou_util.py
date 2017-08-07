@@ -52,7 +52,8 @@ def delFromAllGroup(content):
 def delUser(roomId, content):
   if(roomId is None):
     return 
-  ret = itchat.delete_member_from_chatroom(roomId,[{'UserName':searchUser(getChatroomMemberList(roomId),content)}])
+  #ret = itchat.delete_member_from_chatroom(roomId,[{'UserName':searchUser(getChatroomMemberList(roomId),content)}])
+  ret = itchat.delete_member_from_chatroom(roomId,searchUser(getChatroomMemberList(roomId),content))
   if(ret):
     itchat.send('谢谢群主，为保持群内清洁,已清除广告号~😊',toUserName=roomId)
 
