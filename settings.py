@@ -22,6 +22,7 @@ def init():
   ]
 
   v0= u"您好,SFSU三番加群建群小助手为您服务:)\n"
+  v00=u"每天只能加3个群哦;\n"
   v1= u"回复 0 加CS刷题、竞赛、面试;\n"
   v2= u"回复 1 SFSU三番桌游群\n"
   v3= u"回复 2 加SFSU三番租房群;\n"
@@ -32,6 +33,6 @@ def init():
   v8= u"回复 7 加北美CPA,REG天天刷题群;\n"
   v9= u"回复 8 加线上KTV开嗓🎙️北美总群\n"
   v10= u"回复 9 加北美信用卡爱好者总群\n"
-  vT =v0+v1+v2+v3+v4+v5+v6+v7+v8+v9+v10
+  vT =v0+v00+v1+v2+v3+v4+v5+v6+v7+v8+v9+v10
   usersDict = {}
   admins=[] 

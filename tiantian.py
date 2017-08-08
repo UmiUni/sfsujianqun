@@ -43,6 +43,7 @@ def sendGroupInviteMsg(msg,CurUserName):
       #print settings.chatGroups[y]
       pullMembersMore(msg, settings.chatGroups[y], CurUserName)
       sleep(0.5)
+      settings.usersDict[CurUserName] = settings.usersDict[CurUserName] + 1
   itchat.send_msg(settings.vT, CurUserName)
   sleep(0.5)
   msgText = msg['Text']
