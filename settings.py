@@ -36,4 +36,6 @@ def init():
   usersDict = {}
  
   #admins = [u'超然',u'苹果派🍎',u'🌸🌸🌸']
-  admins = [u'@774514af2f79102d03828205cc9b3c77926b8643fa75749be3a5082cf6149917']
+  admins = [u'@774514af2f79102d03828205cc9b3c77926b8643fa75749be3a5082cf6149917',
+           u'@e77fd677f0f7d1e82551ed794618b55bdc70ad7c4aa0e97a296c289b82d7355f',
+	   u'@87e3182c54445f1ed2e0643a03defc00e87bbf2fddae959552c1c03062d2df57']
