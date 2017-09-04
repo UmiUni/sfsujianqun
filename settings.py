@@ -34,7 +34,8 @@ def init():
   v9= u"回复 8 加线上KTV开嗓🎙️北美总群\n"
   v10= u"回复 9 加北美信用卡爱好者总群\n"
   v11= u"回复 10 加北美表情分享总群\n"
-  vT =v0+v00+v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11
+  v12= u"回复 99 查看【北美加群小助手Jogchat.com】\n"
+  vT =v0+v00+v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12
   usersDict = {}
   admins=[] 
   ADMIN = u'SFSU三番加群小助手'
