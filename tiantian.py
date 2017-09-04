@@ -7,7 +7,7 @@ import json
 import time
 from time import sleep
 import settings
-from xiaozhushou_util import *
+from xiaozhushou_util.xiaozhushou_util import *
 import re
 reload(sys)  
 sys.setdefaultencoding('utf8')
