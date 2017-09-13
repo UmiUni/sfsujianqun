@@ -21,9 +21,8 @@ def add_friend(msg):
     itchat.add_friend(**msg['Text'])
     itchat.send_msg(settings.vT, msg['RecommendInfo']['UserName'])
 
-@itchat.msg_register(itchat.content.TEXT, isGroupChat=False)
+@itchat.msg_register(itchat.content.TEXT)
 def tuling_reply(msg):
-  #print msg
   CurUserName = msg['FromUserName']
   if(u'管理猿加密码' in msg['Content']):
     settings.admins.append(CurUserName)  
