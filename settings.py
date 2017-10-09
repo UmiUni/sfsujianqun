@@ -29,7 +29,7 @@ def init():
   v2= u"回复 1 SFSU三番桌游群\n"
   v3= u"回复 2 加SFSU三番租房群;\n"
   v4= u"回复 3 加SFSU三番拼车群;\n"
-  v5= u"回复 4 加SFSU三番校友群;\n"
+  v5= u"回复 4 加SFSU三番内推找工作群;\n"
   v6= u"回复 5 加SFSU三番美食约饭群;\n"
   v7= u"回复 6 加SFSU三番二手货群;\n"
   v8= u"回复 7 加北美CPA,REG天天刷题群;\n"
