@@ -36,7 +36,7 @@ def sendGroupInviteMsg(msg,CurUserName):
   #print x
   if(len(x) >0):
     y= int(x[0])
-    if(y>=0 and y<=11):
+    if(y>=0 and y<=12):
       #print settings.chatGroups[y]
       if(preventAbuseTalking(CurUserName)):
         return
