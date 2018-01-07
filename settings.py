@@ -24,7 +24,10 @@ def init():
   u'北美游戏交流',
   u'Chuck郭律师',
   u'2018 H1B 中中中',
-  u'北美区块链技术交流总群'
+  u'北美区块链技术交流总群',
+  u'PettingPet 伴你宠 官方微信群1',
+  u'Uber面试群',
+  u'Airbnb内推面试刷题群'
   ]
 
   v0= u"您好,SFSU三番加群建群小助手为您服务:)\n"
@@ -44,8 +47,11 @@ def init():
   v13= u"回复 12 加Chuck郭律师美帝绿卡讨论群.\n"
   v14= u"回复 13 H1B中中中讨论群.\n"
   v15= u"回复 14 加北美区块链技术交流总群.\n"
-  v16= u"回复 99 查看【北美加群小助手Jogchat.com】微信公众号二维码加硅谷、纽约、西雅图、UIUC、Purdue等群\n"
-  vT =v0+v00+v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16
+  v16= u"回复 15 加PettingPet 伴你宠 官方微信群1.\n"
+  v17= u"回复 16 Uber面试群.\n"
+  v18= u"回复 17 Airbnb内推面试刷题群.\n"
+  v19= u"回复 99 查看【北美加群小助手Jogchat.com】微信公众号二维码加硅谷、纽约、西雅图、UIUC、Purdue等群\n"
+  vT =v0+v00+v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16+v17+v18+v19
   usersDict = {}
   admins=[] 
   ADMIN = u'SFSU三番加群小助手'
