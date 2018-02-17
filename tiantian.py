@@ -36,7 +36,7 @@ def sendGroupInviteMsg(msg,CurUserName):
   #print x
   if(len(x) >0):
     y= int(x[0])
-    if(y>=0 and y<=21):
+    if(y>=0 and y<=22):
       #print settings.chatGroups[y]
       if msg['FromUserName'] not in settings.admins:
         if(preventAbuseTalking(CurUserName)):
