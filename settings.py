@@ -60,11 +60,11 @@ def init():
   v20= u"回复 19 SF州立大学万能消息群1🔴.\n"
   v21= u"回复 20 SF州立大学万能消息群2🔴.\n"
   v22= u"回复 21 SF州立大学万能消息群3🔴.\n"
-  v23= u"回复 22 北美股市Trading技术交流总群.\n"
-  v24= u"回复 99 查看【北美加群小助手Jogchat.com】微信公众号二维码加硅谷、纽约、西雅图、UIUC、Purdue等群\n"
-  v25= u"回复 100 加北美NBA数据记者招聘群(无次数限制).\n"
+  v23= u"回复 99 查看【北美加群小助手Jogchat.com】微信公众号二维码加硅谷、纽约、西雅图、UIUC、Purdue等群(无次数限制)\n"
+  v24= u"回复 100 加北美NBA数据记者招聘群(无次数限制).\n"
+  v25= u"回复 101 北美股市Trading技术交流总群(无次数限制).\n"
   vT =v0+v00+v1+v2+v3+v4+v5+v6+v7+v8+v9+v10+v11+v12+v13+v14+v15+v16+v17+v18+v19+v20+v21+v22+v23+v24+v25
   usersDict = {}
   admins=[] 
-  ADMIN = u'SFSU三番加群小助手'
+  ADMIN = u'SFSU三番加群助手jogchat.com'
   previousDay = datetime.datetime.now().day
